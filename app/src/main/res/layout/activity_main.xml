@@ -8,16 +8,92 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Play" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_pause"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Puase" />
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/circle_icons_music" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/song_lable_tv"
+            android:textSize="20sp"
+            android:layout_marginTop="16dp"
+            android:textAlignment="center"
+            android:text="Masjid Quba: Azaan and Telawat E quran"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+            android:scrollHorizontally="true"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <SeekBar
+                android:id="@+id/seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btn_play"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/ic_play_arrow" />
+
+            <Button
+                android:id="@+id/btn_pause"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ic_pause"
+                android:layout_toRightOf="@+id/btn_play"
+                android:layout_centerVertical="true"/>
+
+            <Button
+                android:id="@+id/btn_stop"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/ic_stop_black"
+                android:layout_toLeftOf="@+id/btn_play"
+                android:layout_centerVertical="true"/>
+            <Button
+                android:id="@+id/btn_replay_five_sec"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/ic_replay"
+                android:layout_toLeftOf="@+id/btn_stop"
+                android:layout_centerVertical="true"/>
+
+            <Button
+                android:id="@+id/btn_forward_five_sec"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/ic_forward"
+                android:layout_toRightOf="@+id/btn_pause"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
 </LinearLayout>

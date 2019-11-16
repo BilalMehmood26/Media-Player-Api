@@ -5,10 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
-    Button play,pause;
+    Button play,pause, stop;
+    TextView songLableTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
         play = (Button) findViewById(R.id.btn_play);
         pause = (Button) findViewById(R.id.btn_pause);
+        stop = (Button) findViewById(R.id.btn_stop);
+        songLableTV = (TextView) findViewById(R.id.song_lable_tv);
+        songLableTV.setSelected(true);
+
 
         mediaPlayer = MediaPlayer.create(this, R.raw.quba_masjid);
         play.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.pause();
+            }
+        });
+
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.stop();
             }
         });
 
